@@ -1,6 +1,7 @@
 
+package modelo.abstractas;
+
+
 public class Eleccion {
-    private String id ;
-    
     
 }
