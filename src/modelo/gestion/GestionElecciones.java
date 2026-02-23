@@ -1,6 +1,6 @@
 package modelo.gestion;
 
-import modelo.abstractas.Eleccion;
+
 import modelo.entidades.EleccionMunicipal;
 import modelo.entidades.EleccionNacional;
 import modelo.entidades.EleccionReferendum;
@@ -114,14 +114,14 @@ f2.set(2026, Calendar.OCTOBER, 2);
 Calendar f3 = Calendar.getInstance();
 f3.set(2026, Calendar.NOVEMBER, 20);
 
-System.out.println("Registrar elección municipal: " +
-        ge.registrarEleccion(new EleccionMunicipal("E001", "Elección Municipal 2026", f1, true)));
+System.out.println("Registrar eleccion municipal: " +
+        ge.registrarEleccion(new EleccionMunicipal("E001", "Eleccion Municipal 2026", f1, true)));
 
-System.out.println("Registrar elección nacional: " +
-        ge.registrarEleccion(new EleccionNacional("E002", "Elección Nacional 2026", f2, false)));
+System.out.println("Registrar eleccion nacional: " +
+        ge.registrarEleccion(new EleccionNacional("E002", "Eleccion Nacional 2026", f2, false)));
 
-System.out.println("Registrar referéndum: " +
-        ge.registrarEleccion(new EleccionReferendum("E003", "Referéndum 2026", f3, true)));
+System.out.println("Registrar referendum: " +
+        ge.registrarEleccion(new EleccionReferendum("E003", "Referendum 2026", f3, true)));
 
 System.out.println("\n=== LISTA DE ELECCIONES ===");
 System.out.println(ge.listarElecciones());

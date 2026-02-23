@@ -1,6 +1,6 @@
 package modelo.gestion;
 
-import modelo.entidades.Candidato;
+import modelo.entidades.*;
 
 public class GestionCandidato {
     private Candidato[] candidatos;
@@ -42,16 +42,17 @@ public class GestionCandidato {
         return null;
     }
 
-    public boolean modificarCandidato(String codigo, String nombre, String apellido) {
-        Candidato c = buscarCandidato(codigo);
+    public boolean modificarCandidato(String codigo, String nombre, String apellido, PartidoPolitico partidoPolitico) {
 
-        if (c == null) {
-            return false;
-        }
+    Candidato c = buscarCandidato(codigo);
 
-        c.modificarDatos(nombre, apellido);
-        return true;
+    if (c == null) {
+        return false;
     }
+
+    c.modificarDatos(nombre, apellido, partidoPolitico);
+    return true;
+}
 
     public boolean eliminarCandidato(String codigo) {
         int pos = -1;

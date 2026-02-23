@@ -2,15 +2,21 @@ package modelo.abstractas;
 
 import java.util.Calendar;
 import modelo.enums.TipoEleccion;
+import modelo.entidades.ActaElectoral;
 
 public abstract class Eleccion {
+
     private String codigo;
     private String nombre;
     private Calendar fecha;
     private boolean activa;
     private TipoEleccion tipoEleccion;
+    private ActaElectoral[] actas;
+    private int nActas;
 
     public Eleccion() {
+        actas = new ActaElectoral[50];
+        nActas = 0;
     }
 
     public Eleccion(String codigo, String nombre, Calendar fecha, boolean activa, TipoEleccion tipoEleccion) {
@@ -19,7 +25,52 @@ public abstract class Eleccion {
         this.fecha = fecha;
         this.activa = activa;
         this.tipoEleccion = tipoEleccion;
+
+        // 🔹 NUEVO
+        actas = new ActaElectoral[100];
+        nActas = 0;
     }
+
+
+    // =============================MÉTODOS =============================
+   
+
+    public boolean registrarActa(ActaElectoral acta) {
+        if (acta == null) {
+            return false;
+        }
+
+        if (nActas >= actas.length) {
+            return false;
+        }
+
+        // evitar duplicado por número de acta
+        for (int i = 0; i < nActas; i++) {
+            if (actas[i].getNumeroActa().equalsIgnoreCase(acta.getNumeroActa())) {
+                return false;
+            }
+        }
+
+        actas[nActas] = acta;
+        nActas++;
+        return true;
+    }
+
+    public ActaElectoral[] getActas() {
+        ActaElectoral[] copia = new ActaElectoral[nActas];
+        for (int i = 0; i < nActas; i++) {
+            copia[i] = actas[i];
+        }
+        return copia;
+    }
+
+    public int getCantidadActas() {
+        return nActas;
+    }
+
+    
+    // =============================GETTERS Y SETTERS =============================
+
 
     public String getCodigo() {
         return codigo;
@@ -81,7 +132,7 @@ public abstract class Eleccion {
         }
 
         int dia = fecha.get(Calendar.DAY_OF_MONTH);
-        int mes = fecha.get(Calendar.MONTH) + 1; // Calendar empieza en 0
+        int mes = fecha.get(Calendar.MONTH) + 1;
         int anio = fecha.get(Calendar.YEAR);
 
         return dia + "/" + mes + "/" + anio;
@@ -95,6 +146,7 @@ public abstract class Eleccion {
                 ", fecha=" + getFechaTexto() +
                 ", activa=" + activa +
                 ", tipoEleccion=" + tipoEleccion +
+                ", cantidadActas=" + nActas +
                 '}';
     }
 }

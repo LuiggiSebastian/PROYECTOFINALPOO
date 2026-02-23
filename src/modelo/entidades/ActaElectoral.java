@@ -3,7 +3,6 @@ package modelo.entidades;
 public class ActaElectoral {
     private String numeroActa;
     private MesaElectoral mesaElectoral;
-
     private int totalVotosEmitidos;
     private int votosValidos;
     private int votosBlancos;

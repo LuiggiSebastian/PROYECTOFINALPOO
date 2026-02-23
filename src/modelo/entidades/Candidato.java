@@ -3,20 +3,27 @@ package modelo.entidades;
 import modelo.abstractas.Persona;
 
 public class Candidato extends Persona {
+
     private String codigo;
     private int totalVotosEmitidos;
     private int totalVotosPreferenciales;
+    private PartidoPolitico partidoPolitico;
 
     public Candidato() {
         super();
     }
 
-    public Candidato(int  dni, String nombre, String apellido,
-                     String codigo, int totalVotosEmitidos, int totalVotosPreferenciales) {
+    public Candidato(int dni, String nombre, String apellido,
+                     String codigo,
+                     int totalVotosEmitidos,
+                     int totalVotosPreferenciales,
+                     PartidoPolitico partidoPolitico) {
+
         super(dni, nombre, apellido);
         this.codigo = codigo;
         this.totalVotosEmitidos = totalVotosEmitidos;
         this.totalVotosPreferenciales = totalVotosPreferenciales;
+        this.partidoPolitico = partidoPolitico;
     }
 
     public String getCodigo() {
@@ -43,6 +50,14 @@ public class Candidato extends Persona {
         this.totalVotosPreferenciales = totalVotosPreferenciales;
     }
 
+    public PartidoPolitico getPartidoPolitico() {
+        return partidoPolitico;
+    }
+
+    public void setPartidoPolitico(PartidoPolitico partidoPolitico) {
+        this.partidoPolitico = partidoPolitico;
+    }
+
     public void sumarVotos(int votos) {
         if (votos > 0) {
             totalVotosEmitidos += votos;
@@ -55,9 +70,10 @@ public class Candidato extends Persona {
         }
     }
 
-    public void modificarDatos(String nombre, String apellido) {
+    public void modificarDatos(String nombre, String apellido, PartidoPolitico partidoPolitico) {
         setNombre(nombre);
         setApellido(apellido);
+        this.partidoPolitico = partidoPolitico;
     }
 
     @Override
@@ -65,6 +81,7 @@ public class Candidato extends Persona {
         return "Candidato{" +
                 "codigo='" + codigo + '\'' +
                 ", " + super.toString() +
+                ", partidoPolitico=" + (partidoPolitico != null ? partidoPolitico.getNombre() : "Sin partido") +
                 ", totalVotosEmitidos=" + totalVotosEmitidos +
                 ", totalVotosPreferenciales=" + totalVotosPreferenciales +
                 '}';
