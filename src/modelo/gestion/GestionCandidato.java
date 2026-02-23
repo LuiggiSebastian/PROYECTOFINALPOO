@@ -89,7 +89,7 @@ public class GestionCandidato {
         return lista;
     }
 
-    // Útil para GUI (por ejemplo JTable)
+    // 
     public Candidato[] getCandidatos() {
         Candidato[] copia = new Candidato[n];
         for (int i = 0; i < n; i++) {
