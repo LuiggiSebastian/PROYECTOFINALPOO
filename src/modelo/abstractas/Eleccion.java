@@ -1,27 +1,40 @@
-
 package modelo.abstractas;
-import modelo.entidades.Candidato;
-import modelo.entidades.MesaElectoral;
 
- import java.util.Calendar;
+import java.util.Calendar;
+import modelo.enums.TipoEleccion;
 
 public abstract class Eleccion {
-    private String id;
+    private String codigo;
+    private String nombre;
     private Calendar fecha;
-    private String tipo;
+    private boolean activa;
+    private TipoEleccion tipoEleccion;
 
-    public Eleccion(String id, Calendar fecha, String tipo) {
-        this.id = id;
+    public Eleccion() {
+    }
+
+    public Eleccion(String codigo, String nombre, Calendar fecha, boolean activa, TipoEleccion tipoEleccion) {
+        this.codigo = codigo;
+        this.nombre = nombre;
         this.fecha = fecha;
-        this.tipo = tipo;
+        this.activa = activa;
+        this.tipoEleccion = tipoEleccion;
     }
 
-    public String getId() {
-        return id;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Calendar getFecha() {
@@ -32,33 +45,56 @@ public abstract class Eleccion {
         this.fecha = fecha;
     }
 
-    public String getTipo() {
-        return tipo;
+    public boolean isActiva() {
+        return activa;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setActiva(boolean activa) {
+        this.activa = activa;
     }
 
-    public void agregarCandidato(Candidato c) {
-        // TODO: implementar después
+    public TipoEleccion getTipoEleccion() {
+        return tipoEleccion;
     }
 
-    public void agregarMesa(MesaElectoral m) {
-        // TODO: implementar después
+    public void setTipoEleccion(TipoEleccion tipoEleccion) {
+        this.tipoEleccion = tipoEleccion;
     }
 
-    public abstract void generarResultados();
+    public void activar() {
+        activa = true;
+    }
+
+    public void desactivar() {
+        activa = false;
+    }
+
+    public void modificarDatos(String nombre, Calendar fecha, boolean activa) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.activa = activa;
+    }
+
+    public String getFechaTexto() {
+        if (fecha == null) {
+            return "Sin fecha";
+        }
+
+        int dia = fecha.get(Calendar.DAY_OF_MONTH);
+        int mes = fecha.get(Calendar.MONTH) + 1; // Calendar empieza en 0
+        int anio = fecha.get(Calendar.YEAR);
+
+        return dia + "/" + mes + "/" + anio;
+    }
 
     @Override
     public String toString() {
-        return "Eleccion{"
-                + "id=" + id
-                + "\nfecha=" + fecha.get(Calendar.DAY_OF_MONTH) + "/"
-                + (fecha.get(Calendar.MONTH) + 1) + "/"
-                + fecha.get(Calendar.YEAR)
-                + "\ntipo=" + tipo;
+        return "Eleccion{" +
+                "codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", fecha=" + getFechaTexto() +
+                ", activa=" + activa +
+                ", tipoEleccion=" + tipoEleccion +
+                '}';
     }
 }
-    
-

@@ -1,6 +1,4 @@
-
 package modelo.entidades;
-
 
 public class PartidoPolitico {
     private String codigo;
@@ -12,7 +10,8 @@ public class PartidoPolitico {
     public PartidoPolitico() {
     }
 
-    public PartidoPolitico(String codigo, String nombre, String sigla, String logo, String representanteLegal) {
+    public PartidoPolitico(String codigo, String nombre, String sigla,
+                           String logo, String representanteLegal) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.sigla = sigla;
@@ -69,6 +68,12 @@ public class PartidoPolitico {
 
     @Override
     public String toString() {
-        return nombre + " (" + sigla + ")";
+        return "PartidoPolitico{" +
+                "codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", sigla='" + sigla + '\'' +
+                ", logo='" + logo + '\'' +
+                ", representanteLegal='" + representanteLegal + '\'' +
+                '}';
     }
 }

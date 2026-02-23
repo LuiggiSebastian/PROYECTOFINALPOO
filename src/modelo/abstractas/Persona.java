@@ -1,18 +1,17 @@
-
 package modelo.abstractas;
 
 public abstract class Persona {
-    protected int dni;
-    protected String nombres;
-    protected String apellidos;
+    private int dni;
+    private String nombre;
+    private String apellido;
 
     public Persona() {
     }
 
-    public Persona(int dni, String nombres, String apellidos) {
+    public Persona(int dni, String nombre, String apellido) {
         this.dni = dni;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
 
     public int getDni() {
@@ -23,31 +22,26 @@ public abstract class Persona {
         this.dni = dni;
     }
 
-    public String getNombres() {
-        return nombres;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getNombreCompleto() {
-        return nombres + " " + apellidos;
-    }
-
-    public void mostrarDatosBasicos() {
-        System.out.println("DNI: " + dni);
-        System.out.println("Nombres: " + nombres);
-        System.out.println("Apellidos: " + apellidos);
+    @Override
+    public String toString() {
+        return "dni='" + dni + '\'' +
+               ", nombre='" + nombre + '\'' +
+               ", apellido='" + apellido + '\'';
     }
 }
-    
-

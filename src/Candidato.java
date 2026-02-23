@@ -1,6 +1,6 @@
+import modelo.
 package modelo.entidades;
 
-import modelo.abstractas.Persona;
 
 public class Candidato extends Persona {
     private String codigo;
@@ -11,7 +11,7 @@ public class Candidato extends Persona {
         super();
     }
 
-    public Candidato(int  dni, String nombre, String apellido,
+    public Candidato(String dni, String nombre, String apellido,
                      String codigo, int totalVotosEmitidos, int totalVotosPreferenciales) {
         super(dni, nombre, apellido);
         this.codigo = codigo;
