@@ -20,6 +20,12 @@ public class Prueba {
         fecha,
         true
 );
+          Eleccion eleccion1 = new EleccionNacional(
+        "E01",
+        "Eleccion General 2026",
+        Calendar.getInstance(),
+        true
+);
 
         System.out.println("=== ELECCION CREADA ===");
         System.out.println(eleccion);
@@ -31,16 +37,14 @@ public class Prueba {
         "Renovacion Popular",
         "RP",
         "Rafael Lopez Aliaga",
-        "999888777"
-);
+        "999888777",eleccion1);
 
-PartidoPolitico partido2 = new PartidoPolitico(
+            PartidoPolitico partido2 = new PartidoPolitico(
         "P02",
         "Fuerza Popular",
         "FP",
         "Keiko Fujimori",
-        "988776655"
-);
+        "988776655",eleccion1);
         // =========================Crear Candidato=========================
         
         Candidato c1 = new Candidato(
