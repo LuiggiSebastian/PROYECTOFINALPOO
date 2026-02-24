@@ -117,7 +117,7 @@ public class FrmInforme extends javax.swing.JFrame {
     }//GEN-LAST:event_tbnLimpiarInformeActionPerformed
 
     private void btnGenerarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarInformeActionPerformed
-        // TODO add your handling code here:
+        
         
         txtAreaInforme.setText("========= INFORME GENERAL =========\n\n");
         txtAreaInforme.append("----- PARTIDOS -----\n");
