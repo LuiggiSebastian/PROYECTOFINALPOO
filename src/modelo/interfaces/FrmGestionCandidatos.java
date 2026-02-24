@@ -19,6 +19,7 @@ public class FrmGestionCandidatos extends javax.swing.JFrame {
      */
     public FrmGestionCandidatos() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

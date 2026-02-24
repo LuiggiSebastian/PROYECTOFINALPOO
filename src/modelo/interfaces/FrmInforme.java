@@ -24,6 +24,7 @@ public class FrmInforme extends javax.swing.JFrame {
      */
     public FrmInforme() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

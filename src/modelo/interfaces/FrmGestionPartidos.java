@@ -15,6 +15,7 @@ public class FrmGestionPartidos extends javax.swing.JFrame {
     
     public FrmGestionPartidos() {
     initComponents();
+    this.setLocationRelativeTo(null);
 }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

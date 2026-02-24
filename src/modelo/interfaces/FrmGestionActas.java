@@ -17,6 +17,7 @@ public class FrmGestionActas extends javax.swing.JFrame {
      */
     public FrmGestionActas() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

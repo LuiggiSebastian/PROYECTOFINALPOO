@@ -15,6 +15,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     public FrmPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

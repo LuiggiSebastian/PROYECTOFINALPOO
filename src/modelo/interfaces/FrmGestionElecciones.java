@@ -18,6 +18,7 @@ public class FrmGestionElecciones extends javax.swing.JFrame {
      */
     public FrmGestionElecciones() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
