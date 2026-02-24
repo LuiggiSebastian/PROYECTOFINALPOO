@@ -112,7 +112,7 @@ public class FrmInforme extends javax.swing.JFrame {
 
     private void tbnLimpiarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbnLimpiarInformeActionPerformed
         // TODO add your handling code here:
-        txtAreaInforme
+        txtAreaInforme.setText("");
        
     }//GEN-LAST:event_tbnLimpiarInformeActionPerformed
 
