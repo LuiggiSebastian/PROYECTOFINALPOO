@@ -101,7 +101,7 @@ public class GestionElecciones {
         }
         return copia;
     }
-    
+    /*
     public static void main(String[] args) {
         GestionElecciones ge = new GestionElecciones();
 
@@ -126,4 +126,8 @@ System.out.println("Registrar referendum: " +
 System.out.println("\n=== LISTA DE ELECCIONES ===");
 System.out.println(ge.listarElecciones());
     }
-}   
+   
+*/
+}
+    
+
